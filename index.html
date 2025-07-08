@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《时间简史》十大宇宙奥秘</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #000428 0%, #0a192f 100%);
+            min-height: 100vh;
+            padding: 60px 20px;
+            color: #e0f7fa;
+            line-height: 1.8;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 10px),
+                radial-gradient(white, rgba(255,255,255,.05) 1px, transparent 5px);
+            background-size: 100px 100px, 50px 50px;
+            background-position: 0 0, 30px 30px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(79, 195, 247, 0.7);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1:after {
+            content: "A Brief History of Time";
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            color: #81d4fa;
+            letter-spacing: 4px;
+            opacity: 0.8;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #b3e5fc;
+            max-width: 800px;
+            margin: 40px auto 0;
+            line-height: 1.9;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .author-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .author-card {
+            background: rgba(2, 27, 58, 0.6);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(79, 195, 247, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #0a192f, #4fc3f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        
+        .content-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-top: 30px;
+        }
+        
+        .cosmic-card {
+            background: linear-gradient(145deg, rgba(10, 25, 47, 0.8), rgba(2, 27, 58, 0.9));
+            border-radius: 20px;
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 1px solid rgba(79, 195, 247, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        
+        .cosmic-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #4fc3f7, #01579b);
+        }
+        
+        .cosmic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(79, 195, 247, 0.3);
+        }
+        
+        .card-number {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4fc3f7, #01579b);
+            color: #0a192f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            color: #4fc3f7;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(79, 195, 247, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .card-title i {
+            font-size: 1.8rem;
+        }
+        
+        .card-content {
+            font-size: 1.15rem;
+            color: #e1f5fe;
+            flex-grow: 1;
+            line-height: 1.9;
+            text-align: justify;
+        }
+        
+        .hawking-quote {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(2, 27, 58, 0.5);
+            border-left: 3px solid #4fc3f7;
+            font-style: italic;
+            color: #81d4fa;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .theme-tag {
+            display: inline-block;
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            background: rgba(1, 87, 155, 0.3);
+            color: #81d4fa;
+            border: 1px solid rgba(79, 195, 247, 0.3);
+        }
+        
+        .physics-tag {
+            background: rgba(121, 134, 203, 0.2);
+            color: #b388ff;
+        }
+        
+        .cosmic-tag {
+            background: rgba(240, 98, 146, 0.2);
+            color: #ff80ab;
+        }
+        
+        .footer-note {
+            margin-top: 80px;
+            padding: 40px;
+            background: rgba(10, 25, 47, 0.7);
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #b3e5fc;
+            line-height: 1.9;
+            border: 1px solid rgba(79, 195, 247, 0.2);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .footer-title {
+            font-size: 1.8rem;
+            color: #4fc3f7;
+            margin-bottom: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cosmic-card {
+                padding: 30px 25px;
+            }
+            
+            .footer-note {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>时间简史</h1>
+            <p class="subtitle">霍金带领我们踏上的宇宙探索之旅，从大爆炸到黑洞，从不确定原理到时间箭头，揭示时空本质的宏伟史诗</p>
+            
+            <div class="author-info">
+                <div class="author-card">
+                    <div class="author-img"><i class="fas fa-user-astronaut"></i></div>
+                    <div>
+                        <div>斯蒂芬·霍金</div>
+                        <div style="font-size:0.9rem;color:#81d4fa">1942-2018 · 英国理论物理学家</div>
+                    </div>
+                </div>
+                <div class="author-card">
+                    <div class="author-img"><i class="fas fa-book"></i></div>
+                    <div>
+                        <div>全球销量超2500万册</div>
+                        <div style="font-size:0.9rem;color:#81d4fa">被译为40多种语言</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content-container">
+            <!-- 卡片1 -->
+            <div class="cosmic-card">
+                <div class="card-number">1</div>
+                <h2 class="card-title"><i class="fas fa-bang"></i>大爆炸奇点</h2>
+                <div class="card-content">
+                    <p>宇宙起源于密度无穷大的时空奇点，约138亿年前的大爆炸创造了时间、空间和物质，开启宇宙演化历程。</p>
+                    <div class="hawking-quote">
+                        "宇宙是不断膨胀着的，它在最初应该收缩为一点，这一时刻被称为宇宙大爆炸时刻。宇宙在这一点的密度无穷大，这一点即为数学上所称的奇点。"
+                    </div>
+                    <span class="theme-tag cosmic-tag">宇宙起源</span>
+                </div>
+            </div>
+            
+            <!-- 卡片2 -->
+            <div class="cosmic-card">
+                <div class="card-number">2</div>
+                <h2 class="card-title"><i class="fas fa-hourglass-half"></i>相对论时空观</h2>
+                <div class="card-content">
+                    <p>爱因斯坦相对论揭示时空是相对的物理量，物体运动速度接近光速时会产生时间膨胀效应，引力场也会弯曲时空。</p>
+                    <div class="hawking-quote">
+                        "在一个无限的宇宙中，每一点都可以认为是中心，因为在它的每一边都有无限颗恒星。"
+                    </div>
+                    <span class="theme-tag physics-tag">物理革命</span>
+                </div>
+            </div>
+            
+            <!-- 卡片3 -->
+            <div class="cosmic-card">
+                <div class="card-number">3</div>
+                <h2 class="card-title"><i class="fas fa-expand-arrows-alt"></i>膨胀的宇宙</h2>
+                <div class="card-content">
+                    <p>弗里德曼宇宙模型表明宇宙处于膨胀状态，星系彼此远离，暗能量推动宇宙加速膨胀。</p>
+                    <div class="hawking-quote">
+                        "弗利德曼指出，仅仅从两个观念出发（宇宙均匀且各向同性），我们就应该预料宇宙不是静态的。"
+                    </div>
+                    <span class="theme-tag cosmic-tag">宇宙演化</span>
+                </div>
+            </div>
+            
+            <!-- 卡片4 -->
+            <div class="cosmic-card">
+                <div class="card-number">4</div>
+                <h2 class="card-title"><i class="fas fa-atom"></i>不确定性原理</h2>
+                <div class="card-content">
+                    <p>海森堡原理揭示粒子位置与动量无法同时精确测量，量子世界具有本质不确定性。</p>
+                    <div class="hawking-quote">
+                        "当爱因斯坦说到'上帝不掷骰子'的时候，他错了。鉴于黑洞给予我们的暗示，上帝不仅掷骰子，而且往往将骰子掷到我们看不见的地方以迷惑我们。"
+                    </div>
+                    <span class="theme-tag physics-tag">量子力学</span>
+                </div>
+            </div>
+            
+            <!-- 卡片5 -->
+            <div class="cosmic-card">
+                <div class="card-number">5</div>
+                <h2 class="card-title"><i class="fas fa-shapes"></i>粒子与自然力</h2>
+                <div class="card-content">
+                    <p>宇宙由基本粒子构成，四种基本力（引力、电磁力、强核力、弱核力）支配着物质运动。</p>
+                    <div class="hawking-quote">
+                        "根据量子力学，粒子可以同时处于多个位置或状态，直到被观察时才确定。"
+                    </div>
+                    <span class="theme-tag">物质本质</span>
+                </div>
+            </div>
+            
+            <!-- 卡片6 -->
+            <div class="cosmic-card">
+                <div class="card-number">6</div>
+                <h2 class="card-title"><i class="fas fa-circle-notch"></i>黑洞之谜</h2>
+                <div class="card-content">
+                    <p>大质量恒星坍缩形成黑洞，其引力强大到连光都无法逃脱，挑战经典物理学理论。</p>
+                    <div class="hawking-quote">
+                        "黑洞表面引力很强，时间会在此终止。"
+                    </div>
+                    <span class="theme-tag cosmic-tag">时空边界</span>
+                </div>
+            </div>
+            
+            <!-- 卡片7 -->
+            <div class="cosmic-card">
+                <div class="card-number">7</div>
+                <h2 class="card-title"><i class="fas fa-radiation"></i>霍金辐射</h2>
+                <div class="card-content">
+                    <p>黑洞并非完全"黑"的，量子效应导致黑洞边缘会辐射粒子，这一发现革新了对黑洞的认知。</p>
+                    <div class="hawking-quote">
+                        "黑洞不是这么黑的——量子效应使黑洞像热体一样辐射和散发能量"
+                    </div>
+                    <span class="theme-tag physics-tag">量子引力</span>
+                </div>
+            </div>
+            
+            <!-- 卡片8 -->
+            <div class="cosmic-card">
+                <div class="card-number">8</div>
+                <h2 class="card-title"><i class="fas fa-forward"></i>时间箭头</h2>
+                <div class="card-content">
+                    <p>时间单向流动源于热力学第二定律，宇宙膨胀导致无序度增加，形成时间方向性。</p>
+                    <div class="hawking-quote">
+                        "宇宙收缩相的条件不适合于智慧人类的存在，只有在宇宙膨胀相中才有适合智慧生命的条件。"
+                    </div>
+                    <span class="theme-tag">时间本质</span>
+                </div>
+            </div>
+            
+            <!-- 卡片9 -->
+            <div class="cosmic-card">
+                <div class="card-number">9</div>
+                <h2 class="card-title"><i class="fas fa-worm"></i>虫洞与时间旅行</h2>
+                <div class="card-content">
+                    <p>爱因斯坦方程允许虫洞存在，理论上可作为时空捷径，但量子效应可能阻止宏观时间旅行。</p>
+                    <div class="hawking-quote">
+                        "虫洞的正式名称应叫爱因斯坦-罗森桥，是宇宙中理论上存在的跨越亿万年的负曲率空间"
+                    </div>
+                    <span class="theme-tag cosmic-tag">时空结构</span>
+                </div>
+            </div>
+            
+            <!-- 卡片10 -->
+            <div class="cosmic-card">
+                <div class="card-number">10</div>
+                <h2 class="card-title"><i class="fas fa-infinity"></i>统一理论</h2>
+                <div class="card-content">
+                    <p>物理学终极目标是建立统一四种基本力的完整理论，弦理论等尝试将相对论与量子力学结合。</p>
+                    <div class="hawking-quote">
+                        "人类在寻求建立一个适用于宇宙中每一事件的、完整的、协调的统一理论，在这理论中不需要选取特定的常数去符合事实。"
+                    </div>
+                    <span class="theme-tag physics-tag">终极追求</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-note">
+            <div class="footer-title">时空沉思录</div>
+            <p>《时间简史》以宇宙的宏观叙事重构人类认知：从牛顿的绝对时空到爱因斯坦的弯曲时空，从静态宇宙到138亿年膨胀史。霍金揭示物理定律如何支配宇宙演化，而量子不确定性又如何在微观尺度颠覆经典决定论。</p>
+            <p>书中两大革命性突破——黑洞辐射与无边界宇宙模型——彻底改变了人类对时空本质的理解。当霍金说"宇宙不需要边界条件"时，他不仅否定了造物主的第一推动，更将宇宙创生纳入科学解释范畴，完成了从神学叙事到物理叙事的范式转换。</p>
+            <p>这部巨著最深刻的启示在于：人类作为"普通恒星次要行星上的高级猿类"，竟能通过理性探索触及时空起源之谜。这种有限存在者追求无限真理的勇气，正是科学精神最壮丽的诗篇。</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.cosmic-card');
+            const constellations = ['&#10025;', '&#10026;', '&#10032;', '&#10035;', '&#10036;'];
+            
+            // 卡片入场动画
+            setTimeout(() => {
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                        
+                        // 添加星座装饰
+                        const star1 = document.createElement('div');
+                        star1.innerHTML = constellations[Math.floor(Math.random()*constellations.length)];
+                        star1.style.position = 'absolute';
+                        star1.style.top = Math.random()*80 + 10 + '%';
+                        star1.style.left = Math.random()*80 + 10 + '%';
+                        star1.style.fontSize = '24px';
+                        star1.style.opacity = '0.3';
+                        star1.style.color = '#4fc3f7';
+                        star1.style.zIndex = '0';
+                        card.appendChild(star1);
+                        
+                    }, 200 + index * 150);
+                });
+            }, 500);
+            
+            // 卡片悬停效果
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 15px 40px rgba(79, 195, 247, 0.4)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.4)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
